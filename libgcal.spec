@@ -5,8 +5,8 @@ Name:           libgcal
 Version:        0.9.1
 Release:        %mkrel 0.%git.1
 Summary:        Implements Google Data Protocol 2.0
-License:        GPLv2+
-Group:          Development/Languages
+License:        BSD
+Group:          Communications
 URL:            http://code.google.com/p/libgcal/
 Source:         %name-%version-%git.tar.bz2
 BuildRoot:      %_tmppath/%name-%version-%release-root
