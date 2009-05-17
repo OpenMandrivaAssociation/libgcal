@@ -3,7 +3,7 @@
 
 Name:           libgcal
 Version:        0.9.1
-Release:        %mkrel 0.%git.1
+Release:        %mkrel 0.%git.2
 Summary:        Implements Google Data Protocol 2.0
 License:        BSD
 Group:          Communications
@@ -40,7 +40,7 @@ implements already:
 
 %package   devel
 Summary:   Development files for %{name}
-Group:     Development/Libraries
+Group:     Development/Other 
 Requires:  %{name} = %{version}-%{release}
 
 %description devel
