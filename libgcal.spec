@@ -1,14 +1,14 @@
-%define git     git090517
+%define git     %nil
 %define major 0
 
 Name:           libgcal
-Version:        0.9.1
-Release:        %mkrel 0.%git.2
+Version:        0.9.2
+Release:        %mkrel 1
 Summary:        Implements Google Data Protocol 2.0
 License:        BSD
 Group:          Communications
 URL:            http://code.google.com/p/libgcal/
-Source:         %name-%version-%git.tar.bz2
+Source:         http://libgcal.googlecode.com/files/%name-%version.tar.gz
 BuildRoot:      %_tmppath/%name-%version-%release-root
 BuildRequires:  cmake
 BuildRequires:  curl-devel
@@ -55,7 +55,7 @@ Devel files needed to build applications based on %name.
 
 #--------------------------------------------------------------------
 %prep
-%setup -q -n %name
+%setup -q
 
 
 %build
@@ -64,7 +64,6 @@ Devel files needed to build applications based on %name.
 
 %install
 cd build/
-make DESTDIR=%buildroot install
-
+%makeinstall_std
 %clean
 rm -rf $RPM_BUILD_ROOT
