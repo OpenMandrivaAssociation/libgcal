@@ -3,7 +3,7 @@
 
 Name:           libgcal
 Version:        0.9.2
-Release:        %mkrel 1
+Release:        %mkrel 2
 Summary:        Implements Google Data Protocol 2.0
 License:        BSD
 Group:          Communications
