@@ -1,19 +1,23 @@
-%define git     %nil
-%define major 0
+%define name	libgcal
+%define version	0.9.3
+%define major	0
+%define git	%nil
+%define libname %mklibname gcal %{major}
+%define develname %mklibname gcal -d
 
-Name:           libgcal
-Version:        0.9.3
-Release:        %mkrel 1
-Summary:        Implements Google Data Protocol 2.0
-License:        BSD
-Group:          Communications
-URL:            http://code.google.com/p/libgcal/
-Source:         http://libgcal.googlecode.com/files/%name-%version.tar.bz2
-BuildRoot:      %_tmppath/%name-%version-%release-root
-BuildRequires:  cmake
-BuildRequires:  curl-devel
-BuildRequires:  libxml2-devel
-BuildRequires:  check-devel
+
+Name:		%name
+Version:	%version
+Release:	%mkrel 2
+Summary:	Implements Google Data Protocol 2.0
+License:	BSD
+Group:		Communications
+URL:		http://code.google.com/p/libgcal/
+Source:		http://libgcal.googlecode.com/files/%name-%version.tar.bz2
+BuildRequires:	cmake
+BuildRequires:	curl-devel
+BuildRequires:	libxml2-devel
+BuildRequires:	check-devel
 
 %description
 Implements Google Data Protocol 2.0. 
@@ -32,38 +36,68 @@ implements already:
 - use only xml to add/edit/delete entries
 - great doxygen documentation 
 
-%files
-%defattr(-,root,root,-)
+#-------------------------------------------------------------------
+
+%package -n	%{libname}
+Summary:	Library implementing Google Data Protocol Data 2.0
+Group:		System/Library
+Obsoletes:	libgcal <= 0.9.3-1
+Provides:	%{name} = %{version}-%{release}
+
+%description -n	%{libname}
+This library implements Google Data Protocol 2.0
+It does allow communication with google calendar and contacts, 
+implements already:
+- authentication
+- get all events/contacts
+- atom stream parsing
+- access to individual events/contacts
+- add/delete/edit events/contacts
+- query for updated events/contacts
+- add/edit/delete contacts with photo
+- download your contact's photos
+- proxy is supported
+- timezones
+- use only xml to add/edit/delete entries
+- great doxygen documentation 
+
+%files -n	%{libname}
+%defattr(-,root,root)
 %{_libdir}/libgcal.so.%{major}*
 
 #--------------------------------------------------------------------
 
-%package   devel
-Summary:   Development files for %{name}
-Group:     Development/Other 
-Requires:  %{name} = %{version}-%{release}
 
-%description devel
-Devel files needed to build applications based on %name.
+%package -n	%{develname}
+Summary:	Library headers for %{name}
+Group:		Development/C
+Requires:	%{libname} = %{version}
+Obsoletes:	libgcal-devel <= 0.9.3-1
+Provides:	%{name}-devel = %{version}-%{release}
 
-%files devel
-%defattr(-,root,root,-)
+%description -n	%{develname}
+This is the libraries, include files and other resources you can use
+to incorporate %{name} into applications.
+
+%files -n	%{develname}
+%defattr(-,root,root)
 %{_includedir}/*
 %{_libdir}/libgcal.so
 %{_libdir}/pkgconfig/libgcal.pc
 %{_datadir}/cmake/Modules/FindLibGCal.cmake
 
 #--------------------------------------------------------------------
+
 %prep
 %setup -q
-
 
 %build
 %cmake
 %make
 
 %install
-cd build/
-%makeinstall_std
+%__rm -rf %buildroot
+%makeinstall_std -C build
+
 %clean
-rm -rf $RPM_BUILD_ROOT
+%__rm -rf %buildroot
