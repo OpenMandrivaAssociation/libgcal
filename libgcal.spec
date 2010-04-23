@@ -2,13 +2,13 @@
 %define major 0
 
 Name:           libgcal
-Version:        0.9.2
-Release:        %mkrel 2
+Version:        0.9.3
+Release:        %mkrel 1
 Summary:        Implements Google Data Protocol 2.0
 License:        BSD
 Group:          Communications
 URL:            http://code.google.com/p/libgcal/
-Source:         http://libgcal.googlecode.com/files/%name-%version.tar.gz
+Source:         http://libgcal.googlecode.com/files/%name-%version.tar.bz2
 BuildRoot:      %_tmppath/%name-%version-%release-root
 BuildRequires:  cmake
 BuildRequires:  curl-devel
