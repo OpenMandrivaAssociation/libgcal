@@ -40,7 +40,7 @@ implements already:
 
 %package -n	%{libname}
 Summary:	Library implementing Google Data Protocol Data 2.0
-Group:		System/Library
+Group:		System/Libraries
 Obsoletes:	libgcal <= 0.9.3-1
 Provides:	%{name} = %{version}-%{release}
 
