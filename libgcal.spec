@@ -1,14 +1,13 @@
 %define name	libgcal
-%define version	0.9.3
+%define version	0.9.5
 %define major	0
-%define git	%nil
 %define libname %mklibname gcal %{major}
 %define develname %mklibname gcal -d
 
 
 Name:		%name
 Version:	%version
-Release:	%mkrel 2
+Release:	%mkrel 1
 Summary:	Implements Google Data Protocol 2.0
 License:	BSD
 Group:		Communications
@@ -84,7 +83,7 @@ to incorporate %{name} into applications.
 %{_includedir}/*
 %{_libdir}/libgcal.so
 %{_libdir}/pkgconfig/libgcal.pc
-%{_datadir}/cmake/Modules/FindLibGCal.cmake
+%{_libdir}/LibGCal/cmake/LibGCalConfig.cmake
 
 #--------------------------------------------------------------------
 
