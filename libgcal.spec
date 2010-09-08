@@ -1,5 +1,5 @@
 %define name	libgcal
-%define version	0.9.5
+%define version	0.9.6
 %define major	0
 %define libname %mklibname gcal %{major}
 %define develname %mklibname gcal -d
