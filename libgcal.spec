@@ -7,7 +7,7 @@
 
 Name:		%name
 Version:	%version
-Release:	%mkrel 1
+Release:	2
 Summary:	Implements Google Data Protocol 2.0
 License:	BSD
 Group:		Communications
