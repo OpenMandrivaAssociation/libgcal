@@ -11,7 +11,7 @@ Release:	2
 Summary:	Implements Google Data Protocol 2.0
 License:	BSD
 Group:		Communications
-URL:		http://code.google.com/p/libgcal/
+URL:		https://code.google.com/p/libgcal/
 Source:		http://libgcal.googlecode.com/files/%name-%version.tar.bz2
 BuildRequires:	cmake
 BuildRequires:	curl-devel
