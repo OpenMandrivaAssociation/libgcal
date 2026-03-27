@@ -7,7 +7,7 @@
 
 Name:		%name
 Version:	%version
-Release:	2
+Release:	3
 Summary:	Implements Google Data Protocol 2.0
 License:	BSD
 Group:		Communications
