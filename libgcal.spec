@@ -14,6 +14,7 @@ Group:		Communications
 URL:		https://code.google.com/p/libgcal/
 Source:		http://libgcal.googlecode.com/files/%name-%version.tar.bz2
 BuildRequires:	cmake
+BuildRequires:	make
 BuildRequires:	curl-devel
 BuildRequires:	libxml2-devel
 BuildRequires:	check-devel
