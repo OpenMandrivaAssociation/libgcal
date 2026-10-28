@@ -90,6 +90,8 @@ to incorporate %{name} into applications.
 
 %prep
 %setup -q
+# The unit tests do not typecheck with clang and are not run.
+sed -i 's/option(ENABLE_TESTS "Build unit tests" ON)/option(ENABLE_TESTS "Build unit tests" OFF)/' CMakeLists.txt
 
 %build
 %cmake
