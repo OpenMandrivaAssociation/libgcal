@@ -16,7 +16,7 @@ Source:		http://libgcal.googlecode.com/files/%name-%version.tar.bz2
 BuildRequires:	cmake
 BuildRequires:	make
 BuildRequires:	curl-devel
-BuildRequires:	libxml2-devel
+BuildRequires:	pkgconfig(libxml-2.0)
 BuildRequires:	check-devel
 
 %description
@@ -98,10 +98,6 @@ to incorporate %{name} into applications.
 %install
 %__rm -rf %buildroot
 %makeinstall_std -C build
-
-%clean
-%__rm -rf %buildroot
-
 
 %changelog
 * Wed Sep 08 2010 John Balcaen <mikala@mandriva.org> 0.9.6-1mdv2011.0
